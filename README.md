@@ -144,19 +144,22 @@ An external HTTP Load Balancer was configured to:
 ## Screenshots
 
 ### Load Balancer Configuration
-![Load Balancer](screenshots/load-balancer-overview.png)
+![Load Balancer](screenshot/load-balancer-overview.png)
 
 ### Instance Group Overview
-![Instance Group](screenshots/instance-group-overview.png)
+![Instance Group](screenshot/instance-group-overview.png)
 
 ### Instance Group Details
-![Instance Details](screenshots/instance-group-details.png)
+![Instance Details](screenshot/instance-group-details.png)
 
 ### Backend Service Configuration
-![Backend Service](screenshots/backend-service-config.png)
+![Backend Service](screenshot/backend-service-config.png)
 
 ### Web Server Running
-![Web Server](screenshots/web-server-running.png)
+![Web Server](screenshot/web-server-running.png)
+
+![Web Server](screenshot/web-server-running2.png)
+
 
 ---
 
