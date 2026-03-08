@@ -163,6 +163,24 @@ An external HTTP Load Balancer was configured to:
 
 ---
 
+## Architecture Diagram
+
+     ## Architecture Diagram
+
+        Internet Users
+               │
+               ▼
+       HTTP Load Balancer
+               │
+               ▼
+      Managed Instance Group
+        │               │
+        ▼               ▼
+    VM Instance 1   VM Instance 2
+        │               │
+        ▼               ▼
+      Apache Web Server
+
 ## Results
 
 - Web servers deployed automatically using startup scripts
@@ -171,6 +189,11 @@ An external HTTP Load Balancer was configured to:
 - High availability ensured through load balancing and health checks
 
 ---
+## Project Goal
+
+The goal of this project was to design and deploy a scalable and highly available web infrastructure on Google Cloud using load balancing and autoscaling.
+
+This project demonstrates how production systems handle traffic distribution and automatic scaling using Google Cloud services.
 
 ## Future Improvements
 
