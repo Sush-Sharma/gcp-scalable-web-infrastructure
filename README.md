@@ -166,21 +166,15 @@ An external HTTP Load Balancer was configured to:
 
 ## Architecture Diagram
 
-     ## Architecture Diagram
-
-        Internet Users
-               │
-               ▼
-       HTTP Load Balancer
-               │
-               ▼
-      Managed Instance Group
-        │               │
-        ▼               ▼
-    VM Instance 1   VM Instance 2
-        │               │
-        ▼               ▼
-      Apache Web Server
+               User
+                ↓
+    Google Cloud HTTP Load Balancer
+                ↓
+     Managed Instance Group
+                ↓
+     Compute Engine VM Instances
+                ↓
+        Apache Web Server
 
 ## Results
 
