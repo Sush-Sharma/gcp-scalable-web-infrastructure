@@ -144,21 +144,22 @@ An external HTTP Load Balancer was configured to:
 ## Screenshots
 
 ### Load Balancer Configuration
-![Load Balancer](screenshot/load-balancer-overview.png)
+![Load Balancer](screenshots/load-balancer-overview-terraform.png)
 
 ### Instance Group Overview
-![Instance Group](screenshot/instance-group-overview.png)
+![Instance Group](screenshots/instance-group-terraform.png)
 
-### Instance Group Details
-![Instance Details](screenshot/instance-group-details.png)
+### VM Instances
+![VM Instances](screenshots/vm-instances.png)
 
-### Backend Service Configuration
-![Backend Service](screenshot/backend-service-config.png)
+### Autoscaling Configuration
+![Autoscaling Details](screenshots/autoscaling-config.png)
+
+### Terraform Apply success
+![Terraform State lsit](screenshots/terraform-resources-state.png)
 
 ### Web Server Running
-![Web Server](screenshot/web-server-running.png)
-
-![Web Server](screenshot/web-server-running2.png)
+![Web Server](screenshots/web-running-loadbalancer.png)
 
 
 ---
