@@ -159,7 +159,7 @@ An external HTTP Load Balancer was configured to:
 ![Terraform State lsit](screenshots/terraform-resources-state.png)
 
 ### Web Server Running
-![Web Server](screenshots/web-running-loadbalancer.png)
+![Web Server](screenshots/website-running-loadbalancer.png)
 
 
 ---
