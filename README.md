@@ -1,3 +1,5 @@
+![Terraform CI](https://github.com/Sush-Sharma/gcp-scalable-web-infrastructure/actions/workflows/terraform.yml/badge.svg)
+
 # Scalable Web Infrastructure on Google Cloud using Terraform
 
 ## Project Overview
