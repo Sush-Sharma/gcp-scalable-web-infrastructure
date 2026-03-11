@@ -1,204 +1,118 @@
-# GCP Scalable Web Infrastructure
+# Scalable Web Infrastructure on Google Cloud using Terraform
 
-This project demonstrates how to deploy a highly available and scalable web infrastructure on Google Cloud Platform (GCP) using a Load Balancer, Managed Instance Groups, and Autoscaling.
+## Project Overview
 
-The setup automatically distributes traffic across multiple VM instances and scales based on demand.
+This project demonstrates the deployment of a scalable and highly available web infrastructure on Google Cloud Platform using Terraform.
 
----
+The infrastructure provisions a web server environment that automatically scales based on demand and distributes incoming traffic using a load balancer.
 
-## Architecture Overview
-
-This architecture includes:
-
-- Google Cloud Load Balancer to distribute traffic
-- Managed Instance Group (MIG) for scalable VM instances
-- Autoscaling based on CPU utilization
-- Startup script to automatically configure the web server
-- Health checks to ensure instance reliability
-
-User Request → Load Balancer → Managed Instance Group → VM Instances (Apache Web Server)
+This project showcases Infrastructure as Code (IaC) practices and core cloud architecture components used in modern production environments.
 
 ---
 
-## Technologies Used
+## Architecture
 
-- Google Cloud Platform (GCP)
-- Compute Engine
-- Managed Instance Groups
-- HTTP Load Balancer
-- Autoscaling
-- Apache Web Server
-- Bash Startup Scripts
+The infrastructure consists of the following components:
 
----
+- HTTP Load Balancer to distribute incoming traffic
+- Managed Instance Group to manage multiple VM instances
+- Compute Engine instances running a web server
+- Auto-scaling configuration to adjust capacity automatically
+- Custom startup script to install and configure Apache
 
-## Project Setup Steps
+Architecture Diagram:
 
-### 1. Create Instance Template
-
-An instance template was created to define the VM configuration.
-
-Key configuration:
-- Machine type: e2-micro
-- Boot disk: Debian
-- Startup script installs Apache web server
-
----
-
-### 2. Configure Startup Script
-
-The startup script automatically installs Apache and starts the web server.
-# GCP Scalable Web Infrastructure
-
-This project demonstrates how to deploy a highly available and scalable web infrastructure on Google Cloud Platform (GCP) using a Load Balancer, Managed Instance Groups, and Autoscaling.
-
-The setup automatically distributes traffic across multiple VM instances and scales based on demand.
-
----
-
-## Architecture Overview
-
-This architecture includes:
-
-- Google Cloud Load Balancer to distribute traffic
-- Managed Instance Group (MIG) for scalable VM instances
-- Autoscaling based on CPU utilization
-- Startup script to automatically configure the web server
-- Health checks to ensure instance reliability
-
-User Request → Load Balancer → Managed Instance Group → VM Instances (Apache Web Server)
+![Architecture](architecture/architecture-diagram.png)
 
 ---
 
 ## Technologies Used
 
-- Google Cloud Platform (GCP)
+- Google Cloud Platform
+- Terraform
 - Compute Engine
 - Managed Instance Groups
 - HTTP Load Balancer
-- Autoscaling
 - Apache Web Server
-- Bash Startup Scripts
+- Linux (Debian)
 
 ---
 
-## Project Setup Steps
+## Infrastructure Components
 
-### 1. Create Instance Template
+### Virtual Machine Instances
+Compute Engine instances are created using an Instance Template and deployed within a Managed Instance Group.
 
-An instance template was created to define the VM configuration.
+### Managed Instance Group
+Automatically manages multiple VM instances and ensures high availability.
 
-Key configuration:
-- Machine type: e2-micro
-- Boot disk: Debian
-- Startup script installs Apache web server
+### Auto Scaling
+Automatically increases or decreases the number of instances depending on system load.
 
----
+### HTTP Load Balancer
+Distributes incoming web traffic across multiple backend instances to ensure reliability and performance.
 
-### 2. Configure Startup Script
-
-The startup script automatically installs Apache and starts the web server.
-#!/bin/bash
-apt update
-apt install apache2 -y
-systemctl start apache2
-systemctl enable apache2
-
-echo "<h1>Scalable Web Server Running on GCP</h1>" > /var/www/html/index.html
+### Startup Script
+A custom startup script installs and configures Apache on each VM instance.
 
 ---
 
-### 3. Create Managed Instance Group
+## Deployment with Terraform
 
-A Managed Instance Group (MIG) was created using the instance template.
+The infrastructure is fully provisioned using Terraform.
 
-Features:
-- Multiple VM instances
-- Automatic scaling
-- Health checks
+Terraform configuration files define:
 
----
+- Compute Engine resources
+- Load balancer configuration
+- Instance templates
+- Managed instance groups
+- Autoscaling policies
 
-### 4. Configure Autoscaling
-
-Autoscaling was enabled with:
-
-- Minimum instances: 2
-- Maximum instances: 5
-- Target CPU utilization: 60%
-
-This ensures the infrastructure scales during traffic spikes.
-
----
-
-### 5. Configure HTTP Load Balancer
-
-An external HTTP Load Balancer was configured to:
-
-- Distribute traffic across VM instances
-- Perform health checks
-- Ensure high availability
+Terraform enables reproducible infrastructure deployments using Infrastructure as Code principles.
 
 ---
 
 ## Screenshots
 
 ### Load Balancer Configuration
+
 ![Load Balancer](screenshots/load-balancer-overview-terraform.png)
 
-### Instance Group Overview
+### Instance Group
+
 ![Instance Group](screenshots/instance-group-terraform.png)
 
-### VM Instances
-![VM Instances](screenshots/vm-instances.png)
-
 ### Autoscaling Configuration
-![Autoscaling Details](screenshots/autoscaling-config.png)
 
-### Terraform Apply success
-![Terraform State lsit](screenshots/terraform-resources-state.png)
+![Autoscaling configuration](screenshots/autoscaling-config.png)
+
+### VM Instances
+
+![VM Instances created](screenshots/vm-instances.png)
 
 ### Web Server Running
+
 ![Web Server](screenshots/website-running-loadbalancer.png)
 
+### Terraform Resources
+
+![Terraform State](screenshots/terraform-resources-state.png)
 
 ---
 
-## Architecture Diagram
+## Skills Demonstrated
 
-               User
-                ↓
-    Google Cloud HTTP Load Balancer
-                ↓
-     Managed Instance Group
-                ↓
-     Compute Engine VM Instances
-                ↓
-        Apache Web Server
-
-## Results
-
-- Web servers deployed automatically using startup scripts
-- Traffic distributed across multiple instances
-- Infrastructure automatically scales with demand
-- High availability ensured through load balancing and health checks
-
----
-## Project Goal
-
-The goal of this project was to design and deploy a scalable and highly available web infrastructure on Google Cloud using load balancing and autoscaling.
-
-This project demonstrates how production systems handle traffic distribution and automatic scaling using Google Cloud services.
-
-## Future Improvements
-
-- Add HTTPS Load Balancer
-- Implement Infrastructure as Code using Terraform
-- Add monitoring with Cloud Monitoring
-- Add CI/CD deployment pipeline
+- Cloud Infrastructure Design
+- Infrastructure as Code with Terraform
+- Load Balancing Architecture
+- Auto Scaling Systems
+- Cloud Networking
+- Linux Server Configuration
+- Cloud Deployment Automation
 
 ---
 
 ## Author
 
-Built as part of a Cloud Engineering / DevOps portfolio project.
+Sushant Sharma
